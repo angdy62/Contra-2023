@@ -83,32 +83,65 @@ void LoadResources()
 	LPTEXTURE texMario = textures->Get(ID_TEX_MARIO);
 
 	// readline => id, left, top, right 
-	//Bill
-	sprites->Add(10001, 25,	24,	44,	59, texMario);
+	//Bill Walk
+	/*sprites->Add(10001, 25,	24,	44,	59, texMario);
 	sprites->Add(10002, 90,	27,	110, 58, texMario);
 	sprites->Add(10003, 157, 25, 173, 59, texMario);
 	sprites->Add(10004, 220, 25, 238, 59, texMario);
 	sprites->Add(10005, 285, 27, 305, 58, texMario);
-	sprites->Add(10006, 353, 24, 369, 59, texMario);
+	sprites->Add(10006, 353, 24, 369, 59, texMario);*/
 
+	//Bill Jump
 	sprites->Add(10011, 805, 98, 821, 118, texMario);
 	sprites->Add(10012, 868, 99, 887, 115, texMario);
 	sprites->Add(10013, 935, 96, 951, 116, texMario);
 	sprites->Add(10014, 999, 99, 1018, 115, texMario);
 
+	//Bill Swim
 
-	//Lance
+	sprites->Add(10001, 1065, 435, 1081, 448, texMario);
+	sprites->Add(10002, 1132, 428, 1148, 442, texMario);
+	sprites->Add(10003, 1197, 427, 1213, 441, texMario);
+	sprites->Add(10004, 1260, 424, 1280, 441, texMario);
+
+	//Lance Walk
 	/*sprites->Add(10001, 25,	292, 44, 327, texMario);
 	sprites->Add(10002, 90, 295, 110, 326, texMario);
 	sprites->Add(10003, 157, 293, 173, 327, texMario);
 	sprites->Add(10004, 220, 293, 238, 327, texMario);
 	sprites->Add(10005, 285, 295, 305, 326, texMario);
 	sprites->Add(10006, 353, 292, 369, 327, texMario);
-
-
+	//Lance Jump
 	sprites->Add(10011, 186, 154, 200, 181, texMario);
 	sprites->Add(10012, 155, 154, 171, 181, texMario);
 	sprites->Add(10013, 125, 154, 141, 181, texMario);*/
+
+	//RD008 Walk
+	/*sprites->Add(10001, 1063, 24, 1083, 58, texMario);
+	sprites->Add(10002, 1127, 25, 1148, 59, texMario);
+	sprites->Add(10003, 1195, 24, 1210, 58, texMario);
+	sprites->Add(10004, 1258, 24, 1275, 58, texMario);
+	sprites->Add(10005, 1321, 25, 1343, 58, texMario);
+	sprites->Add(10006, 1392, 24, 1408, 58, texMario);
+	//RD008 Jump
+	sprites->Add(10011, 1845, 102, 1861, 118, texMario);
+	sprites->Add(10012, 1910, 102, 1926, 118, texMario);
+	sprites->Add(10013, 1975, 102, 1991, 118, texMario);
+	sprites->Add(10014, 2040, 102, 2056, 118, texMario);*/
+
+	//RC011 Walk
+	/*sprites->Add(10001, 1063, 292, 1083, 326, texMario);
+	sprites->Add(10002, 1127, 293, 1148, 327, texMario);
+	sprites->Add(10003, 1195, 292, 1210, 326, texMario);
+	sprites->Add(10004, 1258, 292, 1275, 326, texMario);
+	sprites->Add(10005, 1322, 293, 1343, 327, texMario);
+	sprites->Add(10006, 1392, 292, 1408, 326, texMario);*/
+	//RC011 Jump
+	/*sprites->Add(10011, 1845, 370, 1861, 386, texMario);
+	sprites->Add(10012, 1910, 370, 1926, 386, texMario);
+	sprites->Add(10013, 1975, 370, 1991, 386, texMario);
+	sprites->Add(10014, 2040, 370, 2056, 386, texMario);*/
+
 
 	CAnimations * animations = CAnimations::GetInstance();
 	LPANIMATION ani;
@@ -118,8 +151,8 @@ void LoadResources()
 	ani->Add(10002);
 	ani->Add(10003);
 	ani->Add(10004);
-	ani->Add(10005);
-	ani->Add(10006);
+	/*ani->Add(10005);
+	ani->Add(10006);*/
 
 	animations->Add(500, ani);
 
@@ -152,7 +185,7 @@ void LoadResources()
 	
 	
 	mario = new CMario(MARIO_START_X, MARIO_START_Y, MARIO_START_VX);
-	brick = new CBrick(100.0f, 100.0f);
+	//brick = new CBrick(100.0f, 100.0f);
 }
 
 /*
@@ -184,7 +217,7 @@ void Render()
 		FLOAT NewBlendFactor[4] = { 0,0,0,0 };
 		pD3DDevice->OMSetBlendState(g->GetAlphaBlending(), NewBlendFactor, 0xffffffff);
 
-		brick->Render();
+		//brick->Render();
 		mario->Render();
 
 		// Uncomment this line to see how to draw a porttion of a texture  
